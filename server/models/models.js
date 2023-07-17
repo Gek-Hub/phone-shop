@@ -49,23 +49,20 @@ Basket.belongsTo(User);
 User.hasMany(Raiting);
 Raiting.belongsTo(User);
 
-Basket.hasMany(Device);
-Device.belongsTo(Basket);
-
-Type.hasMany(Device);
-Device.belongsTo(Type);
+Basket.hasMany(BasketDevice);
+BasketDevice.belongsTo(Basket);
 
 Brand.hasMany(Device);
 Device.belongsTo(Brand);
 
-Device.hasMany(Brand);
-Brand.belongsTo(Device);
-
 Device.hasMany(BasketDevice);
-BasketDevice.belongsTo(Brand);
+BasketDevice.belongsTo(Device);
 
-Device.hasMany(DeviceInfo);
+Device.hasMany(DeviceInfo, { as: "info" });
 DeviceInfo.belongsTo(Device);
+
+Type.hasMany(Device);
+Device.belongsTo(Type);
 
 Type.belongsToMany(Brand, { through: TypeBrand });
 Brand.belongsToMany(Type, { through: TypeBrand });

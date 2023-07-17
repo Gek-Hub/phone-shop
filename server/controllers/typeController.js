@@ -3,6 +3,10 @@ const ApiError = require("../errors/ApiError");
 class TypeControler {
   static async create(req, res) {
     const { name } = req.body;
+    const existType = await Type.findOne({ where: { name } });
+    if (existType) {
+      return res.json({ message: `Type ${name} уже существует` });
+    }
     const type = await Type.create({ name });
     //console.log(type,name);
     return res.json(type);
