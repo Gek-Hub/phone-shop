@@ -14,28 +14,34 @@ import {
 
 export const publicRoutes = [
   {
+    id: 1,
     path: SHOP_ROUTE,
     Component: Shop,
   },
   {
+    id: 2,
     path: DEVICE_ROUTE,
     Component: DevicePage,
   },
   {
+    id: 3,
     path: LOGIN_ROUTE,
     Component: Auth,
   },
   {
+    id: 4,
     path: REGISTRATION_ROUTE,
     Component: Auth,
   },
 ];
 export const authRoutes = [
   {
+    id: 1,
     path: ADMIN_ROUTE,
     Component: Admin,
   },
   {
+    id: 2,
     path: BASKET_ROUTE,
     Component: Basket,
   },
